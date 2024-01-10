@@ -21,7 +21,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'no-console': 'error',
-
+    'no-unused-vars': 'off',
     'import/no-duplicates': ['error'],
     'import/no-namespace': ['error'],
     'import/order': [
@@ -29,6 +29,16 @@ module.exports = {
       {
         alphabetize: { order: 'asc' },
         'newlines-between': 'never',
+      },
+    ],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
