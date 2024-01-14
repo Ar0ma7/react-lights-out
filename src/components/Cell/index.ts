@@ -1,3 +1,3 @@
-import { Cell } from './Cell';
+import { CellContainer } from './Cell.container';
 
-export { Cell };
+export { CellContainer };
