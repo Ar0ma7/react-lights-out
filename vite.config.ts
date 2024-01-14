@@ -6,6 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   plugins: [
     react({
+      jsxImportSource: '@emotion/react',
       plugins: [['@swc-jotai/react-refresh', {}]],
     }),
     tsconfigPaths(),

@@ -11,7 +11,7 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'import', 'unused-imports'],
+  plugins: ['react-refresh', 'import', 'unused-imports', '@emotion'],
   settings: {
     react: { version: 'detect' },
   },
@@ -20,6 +20,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'no-console': 'error',
     'no-unused-vars': 'off',
     'import/no-duplicates': ['error'],
@@ -42,5 +43,6 @@ module.exports = {
       },
     ],
     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+    // '@emotion/pkg-renaming': 'error',
   },
 };

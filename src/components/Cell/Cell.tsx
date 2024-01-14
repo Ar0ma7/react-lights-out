@@ -1,5 +1,5 @@
-import styles from './Cell.module.scss';
+import { styles } from './Cell.css.ts';
 
 export function Cell() {
-  return <div className={styles.cell}></div>;
+  return <div css={styles.cell}></div>;
 }
