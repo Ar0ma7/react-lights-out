@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { CellContainer } from '../Cell';
 import { styles } from './Board.css.ts';
-import { BoardSize, Board } from '@/atoms/boardAtoms';
+import { BoardSize, Board } from '@/atoms/types/boardAtoms.js';
 
 type Props = {
   boardSize: BoardSize;
@@ -22,7 +22,7 @@ export function Board(props: Props) {
       const gridArea = `area_${rowIndex}_${columnIndex}`;
       return (
         <div key={gridArea} css={{ gridArea }}>
-          <CellContainer />
+          <CellContainer row={rowIndex} column={columnIndex} />
         </div>
       );
     })
