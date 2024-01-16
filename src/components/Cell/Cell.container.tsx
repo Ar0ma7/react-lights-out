@@ -18,5 +18,5 @@ export function CellContainer(props: Props) {
     toggleCell();
   }, [toggleCell]);
 
-  return <Cell value={board[row][column]} onClick={handleClick} />;
+  return <Cell isOn={board[row][column]} onClick={handleClick} />;
 }
