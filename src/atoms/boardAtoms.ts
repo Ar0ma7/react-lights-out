@@ -1,6 +1,10 @@
 import { atom } from 'jotai';
-import { Board, BoardSize } from './types/boardAtoms';
 
+export type BoardSize = [row: number, column: number];
 export const boardSizeAtom = atom<BoardSize>([5, 5]);
 
+export type Board = boolean[][];
 export const boardAtom = atom<Board>([]);
+
+export type ToggleMode = 'cross' | 'saltire';
+export const toggleModeAtom = atom<ToggleMode>('cross');

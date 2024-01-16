@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { CellContainer } from '../Cell';
 import { styles } from './Board.css.ts';
-import { BoardSize, Board } from '@/atoms/types/boardAtoms.js';
+import { BoardSize, Board } from '@/atoms/boardAtoms.js';
 
 type Props = {
   boardSize: BoardSize;
