@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { CellContainer } from '../Cell';
-import { styles } from './Board.css.ts';
+import { gap, styles } from './Board.css.ts';
 import { BoardSize, Board } from '@/atoms/boardAtoms.js';
 
 type Props = {
@@ -36,8 +36,8 @@ export function Board(props: Props) {
           gridTemplateAreas,
           gridTemplateRows: `${boardSize[0]}`,
           gridTemplateColumns: `${boardSize[1]}`,
-          width: `${boardSize[0] * 100}px`,
-          height: `${boardSize[1] * 100}px`,
+          width: `${boardSize[0] * 100 + boardSize[0] * gap + gap}px`,
+          height: `${boardSize[1] * 100 + boardSize[1] * gap + gap}px`,
         }),
       ]}
     >

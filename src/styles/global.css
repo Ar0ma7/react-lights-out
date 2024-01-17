@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+}
+
+:root {
+  --background-color: #f4f4d7;
+  --border-color: #2e2e35;
+
+  --cell-background-color-on: #96e55a;
+  --cell-background-color-off: #666653;
+
+  --accent: #e38939;
+}
