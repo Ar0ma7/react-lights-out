@@ -1,18 +1,15 @@
 import { Provider, createStore } from 'jotai';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/global.css';
-import { BoardContainer } from './components/Board/Board.container.tsx';
-import { Layout } from './components/Layout/Layout.tsx';
+import '@/styles/global.css';
+import { AppContainer } from '@/components/App/index.ts';
 
 const myStore = createStore();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={myStore}>
-      <Layout>
-        <BoardContainer />
-      </Layout>
+      <AppContainer />
     </Provider>
   </React.StrictMode>
 );

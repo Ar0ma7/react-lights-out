@@ -1,3 +1,1 @@
-import { BoardContainer } from './Board.container';
-
-export { BoardContainer };
+export { BoardContainer } from './Board.container';
