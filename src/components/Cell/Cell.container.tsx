@@ -9,7 +9,7 @@ type Props = {
   column: number;
 };
 
-export function CellContainer(props: Props) {
+export const CellContainer = (props: Props) => {
   const { row, column } = props;
   const board = useAtomValue(boardAtom);
   const toggleCell = useToggleCell({ row, column });
@@ -19,4 +19,4 @@ export function CellContainer(props: Props) {
   }, [toggleCell]);
 
   return <Cell isOn={board[row][column]} onClick={handleClick} />;
-}
+};

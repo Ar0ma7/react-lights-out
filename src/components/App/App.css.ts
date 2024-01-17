@@ -18,11 +18,22 @@ export const styles = {
   }),
   left: css({
     gridArea: 'left',
+    justifySelf: 'self-end',
+    padding: '0 10px',
   }),
   right: css({
     gridArea: 'right',
+    justifySelf: 'self-start',
+    padding: '0 10px',
   }),
   bottom: css({
     gridArea: 'bottom',
+  }),
+  buttonContainer: css({
+    display: 'flex',
+    gap: 10,
+  }),
+  isVertical: css({
+    flexDirection: 'column',
   }),
 };

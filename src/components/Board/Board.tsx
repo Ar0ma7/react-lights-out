@@ -8,9 +8,7 @@ type Props = {
   board: Board;
 };
 
-export function Board(props: Props) {
-  const { boardSize, board } = props;
-
+export function Board({ boardSize, board }: Props) {
   const gridTemplateAreas: string = board
     .map(
       (y, yIdx) => `"${y.map((_, xIdx) => `area_${xIdx}_${yIdx}`).join(' ')}"`

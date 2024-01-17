@@ -1,12 +1,25 @@
-import { useAtomValue, useSetAtom } from 'jotai';
-import { useEffect } from 'react';
+import { useAtom, useAtomValue, useSetAtom } from 'jotai';
+import { useCallback, useEffect } from 'react';
 import { App } from './App';
-import { boardAtom, boardSizeAtom } from '@/atoms/boardAtoms';
+import {
+  ToggleMode,
+  boardAtom,
+  boardSizeAtom,
+  toggleModeAtom,
+} from '@/atoms/boardAtoms';
 import { create2DArray } from '@/utils/create2DArray';
 
-export function AppContainer() {
+export const AppContainer = () => {
   const boardSize = useAtomValue(boardSizeAtom);
   const setBoard = useSetAtom(boardAtom);
+  const [toggleMode, setToggleMode] = useAtom(toggleModeAtom);
+
+  const handleClickToggleMode = useCallback(
+    (mode: ToggleMode) => {
+      setToggleMode(mode);
+    },
+    [setToggleMode]
+  );
 
   // on mount
   useEffect(() => {
@@ -16,5 +29,7 @@ export function AppContainer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <App />;
-}
+  return (
+    <App toggleMode={toggleMode} onClickToggleMode={handleClickToggleMode} />
+  );
+};

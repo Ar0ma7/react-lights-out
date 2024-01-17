@@ -4,7 +4,7 @@ import { Board } from './Board';
 import { boardAtom, boardSizeAtom } from '@/atoms/boardAtoms';
 import { create2DArray } from '@/utils/create2DArray';
 
-export function BoardContainer() {
+export const BoardContainer = () => {
   const boardSize = useAtomValue(boardSizeAtom);
   const [board, setBoard] = useAtom(boardAtom);
 
@@ -14,4 +14,4 @@ export function BoardContainer() {
   }, [boardSize, setBoard]);
 
   return <Board boardSize={boardSize} board={board} />;
-}
+};

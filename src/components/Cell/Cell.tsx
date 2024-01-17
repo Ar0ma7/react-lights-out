@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { styles } from './Cell.css.ts';
 
 type Props = {
@@ -5,10 +6,11 @@ type Props = {
   onClick: () => void;
 };
 
-export function Cell(props: Props) {
+export const Cell = memo((props: Props) => {
   const { isOn, onClick } = props;
 
   return (
     <div css={[styles.cell, isOn ? styles.isOn : '']} onClick={onClick}></div>
   );
-}
+});
+Cell.displayName = 'Cell';

@@ -15,5 +15,7 @@ body {
   --cell-background-color-on: #96e55a;
   --cell-background-color-off: #666653;
 
-  --accent: #e38939;
+  --toggle-button-active: #e38939;
+
+  --button-color: #70dcc4;
 }
