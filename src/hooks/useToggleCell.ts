@@ -25,36 +25,44 @@ export const useToggleCell = (params: Params) => {
   const isNotOverRight = right <= maxColumn - 1;
   const isNotOverBottom = bottom <= maxRow - 1;
 
-  return () => {
-    const newBoard = [...board];
+  const newBoard = [...board];
 
+  // 十字
+  const toggleCross = () => {
+    // top
+    if (isNotOverTop) newBoard[top][column] = !newBoard[top][column];
+    // left
+    if (isNotOverLeft) newBoard[row][left] = !newBoard[row][left];
+    // right
+    if (isNotOverRight) newBoard[row][right] = !newBoard[row][right];
+    // bottom
+    if (isNotOverBottom) newBoard[bottom][column] = !newBoard[bottom][column];
+  };
+
+  // 斜め十字
+  const toggleSaltire = () => {
+    // top-left
+    if (isNotOverTop && isNotOverLeft)
+      newBoard[top][left] = !newBoard[top][left];
+    // top-right
+    if (isNotOverTop && isNotOverRight)
+      newBoard[top][right] = !newBoard[top][right];
+    // bottom-left
+    if (isNotOverBottom && isNotOverLeft)
+      newBoard[bottom][left] = !newBoard[bottom][left];
+    // bottom-right
+    if (isNotOverBottom && isNotOverRight)
+      newBoard[bottom][right] = !newBoard[bottom][right];
+  };
+
+  return () => {
     // self
     newBoard[row][column] = !newBoard[row][column];
-    // 十字
+
     if (toggleMode === 'cross') {
-      // top
-      if (isNotOverTop) newBoard[top][column] = !newBoard[top][column];
-      // left
-      if (isNotOverLeft) newBoard[row][left] = !newBoard[row][left];
-      // right
-      if (isNotOverRight) newBoard[row][right] = !newBoard[row][right];
-      // bottom
-      if (isNotOverBottom) newBoard[bottom][column] = !newBoard[bottom][column];
-    }
-    // 斜め十字
-    else if (toggleMode === 'saltire') {
-      // top-left
-      if (isNotOverTop && isNotOverLeft)
-        newBoard[top][left] = !newBoard[top][left];
-      // top-right
-      if (isNotOverTop && isNotOverRight)
-        newBoard[top][right] = !newBoard[top][right];
-      // bottom-left
-      if (isNotOverBottom && isNotOverLeft)
-        newBoard[bottom][left] = !newBoard[bottom][left];
-      // bottom-right
-      if (isNotOverBottom && isNotOverRight)
-        newBoard[bottom][right] = !newBoard[bottom][right];
+      toggleCross();
+    } else if (toggleMode === 'saltire') {
+      toggleSaltire();
     }
 
     setBoard(newBoard);
