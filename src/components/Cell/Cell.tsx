@@ -6,9 +6,7 @@ type Props = {
   onClick: () => void;
 };
 
-export const Cell = memo((props: Props) => {
-  const { isOn, onClick } = props;
-
+export const Cell = memo(({ isOn, onClick }: Props) => {
   return (
     <div css={[styles.cell, isOn ? styles.isOn : '']} onClick={onClick}></div>
   );

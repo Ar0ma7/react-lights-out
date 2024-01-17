@@ -9,8 +9,7 @@ type Props = {
   column: number;
 };
 
-export const CellContainer = (props: Props) => {
-  const { row, column } = props;
+export const CellContainer = ({ row, column }: Props) => {
   const board = useAtomValue(boardAtom);
   const toggleCell = useToggleCell({ row, column });
 
