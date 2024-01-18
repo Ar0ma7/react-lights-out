@@ -1,12 +1,13 @@
-import React from "react";
+import { Provider } from 'jotai';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import '@/styles/global.css';
+import { AppContainer } from '@/components/App/index.ts';
 
-import ReactDOM from "react-dom/client";
-
-import App from "./App.tsx";
-import "./index.css";
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider>
+      <AppContainer />
+    </Provider>
+  </React.StrictMode>
 );
