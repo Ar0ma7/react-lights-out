@@ -22,7 +22,7 @@ module.exports = {
     ],
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'no-console': 'error',
-    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
     'import/no-duplicates': ['error'],
     'import/no-namespace': ['error'],
     'import/order': [
@@ -43,6 +43,10 @@ module.exports = {
       },
     ],
     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+    'react-hooks/exhaustive-deps': [
+      'warn',
+      { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
+    ],
     // '@emotion/pkg-renaming': 'error',
   },
 };
