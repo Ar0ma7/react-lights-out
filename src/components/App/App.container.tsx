@@ -2,11 +2,16 @@ import { useAtom, useSetAtom } from 'jotai';
 import { useCallback } from 'react';
 import { App } from './App';
 import { ToggleMode, boardAtom, toggleModeAtom } from '@/atoms/boardAtoms';
+import { useGetWindowSize } from '@/hooks/useGetWindowSize';
 import { create2DArray } from '@/utils/create2DArray';
 
 export const AppContainer = () => {
   const setBoard = useSetAtom(boardAtom);
   const [toggleMode, setToggleMode] = useAtom(toggleModeAtom);
+
+  const { width, height } = useGetWindowSize();
+
+  const canvasSize = width <= height ? width : height;
 
   const handleClickToggleMode = useCallback(
     (mode: ToggleMode) => {
@@ -22,6 +27,7 @@ export const AppContainer = () => {
   return (
     <App
       toggleMode={toggleMode}
+      canvasSize={canvasSize}
       onClickToggleMode={handleClickToggleMode}
       onClickNewGame={handleClickNewGame}
     />
