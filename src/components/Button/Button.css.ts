@@ -14,8 +14,14 @@ export const styles = {
       opacity: 0.8,
     },
   }),
+  isMobile: css({
+    width: 50,
+    height: 50,
+  }),
   icon: css({
     display: 'block',
+    width: '70%',
+    height: 'auto',
   }),
   isSaltire: css({
     transform: 'rotate(45deg)',

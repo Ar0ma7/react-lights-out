@@ -1,6 +1,7 @@
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactNode, memo, useMemo } from 'react';
+import { isMobile } from 'react-device-detect';
 import { styles } from './Button.css';
 import toggleIcon1 from '@/assets/toggleIcon1.svg';
 import { ToggleMode } from '@/atoms/boardAtoms';
@@ -38,7 +39,11 @@ export const Button = memo(({ icon, onClick, children, ...props }: Props) => {
   }, [icon]);
 
   return (
-    <div css={styles.button} onClick={onClick} {...props}>
+    <div
+      css={[styles.button, isMobile && styles.isMobile]}
+      onClick={onClick}
+      {...props}
+    >
       {iconImage || children}
     </div>
   );

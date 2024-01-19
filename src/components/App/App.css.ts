@@ -4,14 +4,15 @@ export const styles = {
   container: css({
     display: 'grid',
     gridTemplateAreas: `"notUse1 top notUse2" "left center right" "notUse3 bottom notUse4"`,
-    gridTemplateRows: '1fr auto 1fr',
-    gridTemplateColumns: '1fr auto 1fr',
     justifyItems: 'center',
     alignItems: 'center',
     height: '100vh',
   }),
   center: css({
     gridArea: 'center',
+    padding: 20,
+    width: '100%',
+    height: '100%',
   }),
   top: css({
     gridArea: 'top',
@@ -28,6 +29,7 @@ export const styles = {
   }),
   bottom: css({
     gridArea: 'bottom',
+    alignSelf: 'self-start',
   }),
   buttonContainer: css({
     display: 'flex',
@@ -35,5 +37,11 @@ export const styles = {
   }),
   isVertical: css({
     flexDirection: 'column',
+  }),
+  mobileLayout: css({
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '0 30px',
+    width: '100%',
   }),
 };

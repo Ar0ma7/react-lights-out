@@ -7,5 +7,7 @@ export const styles = {
     display: 'grid',
     gap,
     padding: gap,
+    width: '100%',
+    height: '100%',
   }),
 };
