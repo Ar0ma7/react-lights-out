@@ -4,22 +4,27 @@
 
 ## Overview
 
-***DEMO:***
-[https://react-reversi.vercel.app/](https://react-lights-out-nine.vercel.app)
+**_DEMO:_**
+[https://react-lights-out-nine.vercel.app](https://react-lights-out-nine.vercel.app)
 
 ## Requirement
+
 - Node.js 20.10.0+
 
 ## Usage
 
 1. Install npm package
-  ```
-  $ npm install
-  ```
+
+```
+$ npm install
+```
+
 2. Run `npm run dev`
-  ```
-  $ npm run dev
-  ```
+
+```
+$ npm run dev
+```
+
 3. Access `http://localhost:5173` with a web browser
 
 ## Licence
