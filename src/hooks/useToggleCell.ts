@@ -1,5 +1,6 @@
 import { useAtom, useAtomValue } from 'jotai';
-import { boardAtom, boardSizeAtom, toggleModeAtom } from '@/atoms/boardAtoms';
+import { boardAtom, boardSizeAtom } from '@/atoms/boardAtoms';
+import { toggleModeAtom } from '@/atoms/gameAtoms';
 
 type Params = {
   row: number;
