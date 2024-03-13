@@ -17,7 +17,7 @@ export const CellContainer = ({ row, column }: Props) => {
 
   const handleClick = useCallback(() => {
     toggleCell();
-    setCount((prev) => prev++);
+    setCount((prev) => prev + 1);
   }, [setCount, toggleCell]);
 
   return <Cell isOn={board[row][column]} onClick={handleClick} />;

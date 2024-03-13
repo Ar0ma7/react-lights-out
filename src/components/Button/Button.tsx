@@ -4,7 +4,7 @@ import { ReactNode, memo, useMemo } from 'react';
 import { isMobile } from 'react-device-detect';
 import { styles } from './Button.css';
 import toggleIcon1 from '@/assets/toggleIcon1.svg';
-import { ToggleMode } from '@/atoms/boardAtoms';
+import { ToggleMode } from '@/atoms/gameAtoms';
 
 type Icon = ToggleMode | 'newGame';
 

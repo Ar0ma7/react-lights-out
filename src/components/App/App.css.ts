@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 
 export const styles = {
+  wrapper: css({
+    position: 'relative',
+  }),
   container: css({
     display: 'grid',
     gridTemplateAreas: `"notUse1 top notUse2" "left center right" "notUse3 bottom notUse4"`,
@@ -43,5 +46,19 @@ export const styles = {
     justifyContent: 'space-between',
     padding: '0 30px',
     width: '100%',
+  }),
+  modalInner: css({
+    display: 'grid',
+    justifyItems: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    height: '100%',
+  }),
+  modalTitle: css({
+    fontSize: 32,
+    fontWeight: 'bold',
+  }),
+  modalMessage: css({
+    marginTop: 10,
   }),
 };

@@ -7,6 +7,7 @@ type Params = {
   column: number;
 };
 
+/** toggleMode に基づいてセルの状態を切り替える */
 export const useToggleCell = (params: Params) => {
   const { row, column } = params;
 
